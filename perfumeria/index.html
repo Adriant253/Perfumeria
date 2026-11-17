@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumière Perfumería · Quiénes somos</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="landing">
+
+<header class="header">
+  <!-- Portada: solo marca y acceso; la navegación vive en el cuerpo. -->
+  <div class="container lhead lhead--portada">
+    <a class="logo" href="index.html">
+      <!-- Dos versiones del logo: el CSS muestra --claro sobre encabezado blanco
+           y --vino sobre el vino, según la clase del <body>. -->
+      <img class="logo__img logo__img--vino" src="assets/img/logo.jpg" alt="Lumière Perfumería" width="634" height="640" />
+      <img class="logo__img logo__img--claro" src="assets/img/logo_blanco.png" alt="" aria-hidden="true" width="419" height="420" />
+    </a>
+
+    <!-- landing.js pinta aquí el acceso; con sesión abierta manda directo a la tienda -->
+    <div class="lhead__acciones" id="zonaSesion"></div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Aviso de la casa: en el cuerpo de la página, no en la cabecera -->
+  <section class="lanuncio" aria-label="Aviso de envío gratis">
+    <p class="lanuncio__texto"><span id="envioGratisTopbar">Envío gratis en compras mayores a $599</span></p>
+  </section>
+
+  <section class="lportada">
+    <div>
+      <span class="lportada__etiqueta">Perfumería de autor · México</span>
+      <h1 class="lportada__titulo">Cada aroma guarda una historia</h1>
+      <p class="lportada__texto">
+        No vendemos frascos al azar: elegimos cada fragancia por su relato, su estela y su
+        carácter. Envío gratis desde <b id="envioGratisHero">$599</b> y hasta
+        <b id="mesesHero">12</b> pagos sin intereses.
+      </p>
+      <form class="lbuscar" id="lBuscador" role="search">
+        <input type="search" id="lBuscar" placeholder="Buscar perfume, marca o nota olfativa" aria-label="Buscar en la tienda" maxlength="60" autocomplete="off" />
+        <button type="submit">Buscar</button>
+      </form>
+      <div class="lportada__acciones">
+        <a class="boton boton--claro" href="pages/tienda.html">Ver la colección</a>
+        <a class="enlace-sub" href="#lquienes">Quiénes somos</a>
+      </div>
+    </div>
+    <div class="lportada__arte" id="lArteHero" aria-hidden="true"></div>
+  </section>
+
+  <!-- ----- Quiénes somos ----- -->
+  <section class="container lbloque" id="lquienes">
+    <div class="lquienes">
+      <div>
+        <span class="lquienes__etiqueta">La casa</span>
+        <h2 class="lquienes__titulo">Somos una perfumería mexicana que elige aromas por historia, no por escaparate</h2>
+        <p class="lquienes__texto">
+          Lumière nació como una pequeña selección de fragancias que reuníamos de viaje: perfumes
+          que se quedan en la memoria de quien los usa. Hoy trabajamos con casas nacionales e
+          internacionales y curamos cada pieza —de las más dulces a las más amaderadas— para que
+          encuentres una firma que te represente, sin importar la edad ni la ocasión.
+        </p>
+        <p class="lquienes__texto">
+          Estamos para lo que casi nadie hace en una tienda en línea: escucharte. Si dudas entre un
+          floral y un oriental, escríbenos y te ayudamos a comparar notas, duración y estela antes
+          de comprar. Todo lo que vendemos es original, con garantía de autenticidad y devolución
+          sin complicaciones.
+        </p>
+      </div>
+
+      <aside class="lquienes__panel">
+        <div id="lArteHistoria" aria-hidden="true"></div>
+        <div class="lvalores">
+          <div>
+            <b>Curaduría de autor</b>
+            <span>Olemos y probamos cada fragancia antes de publicarla: si no nos convence, no entra.</span>
+          </div>
+          <div>
+            <b>100 % originales</b>
+            <span>Frascos sellados de distribuidores autorizados, con garantía de autenticidad.</span>
+          </div>
+          <div>
+            <b>Asesoría olfativa</b>
+            <span>Te ayudamos a elegir por familia, concentración y duración, no por marca.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ----- Cifras reales del catálogo ----- -->
+  <section class="container lbloque" id="lcifras">
+    <div class="lcifras" id="lCifras"></div>
+  </section>
+
+  <!-- ----- Categorías (navegación hacia la tienda) ----- -->
+  <section class="lbloque lbloque--gris" id="lcategorias">
+    <div class="container">
+      <div class="lbloque__cab">
+        <h2 class="lbloque__titulo">Explora por categoría</h2>
+        <a class="lbloque__nota" href="pages/tienda.html">Ver todo</a>
+      </div>
+      <div class="lmosaico" id="lCategorias"></div>
+    </div>
+  </section>
+
+  <!-- ----- Cómo trabajamos ----- -->
+  <section class="container lbloque" id="lbeneficios">
+    <div class="lbloque__cab">
+      <h2 class="lbloque__titulo">Cómo trabajamos</h2>
+      <span class="lbloque__nota" id="envioGratisBenefit">Envío gratis desde $599</span>
+    </div>
+    <div class="lventajas">
+      <div><b>Compra acompañada</b><span>Notas, duración y estela explicadas antes de pagar</span></div>
+      <div><b>Envío en 24-48 h</b><span>Empaque protegido y guía de rastreo</span></div>
+      <div><b>Pago seguro</b><span>Tarjeta, PayPal u OXXO y meses sin intereses</span></div>
+      <div><b>Devolución fácil</b><span>30 días para cambios si no te convence</span></div>
+    </div>
+  </section>
+
+  <section class="lcierre">
+    <h2>Encuentra tu firma</h2>
+    <p>Explora el catálogo por categoría o cuéntanos qué buscas y te recomendamos.</p>
+    <a class="boton boton--claro" href="pages/tienda.html">Ir a la tienda</a>
+  </section>
+
+</main>
+
+<footer class="footer" id="lcontacto">
+  <div class="container footer__grid">
+    <div>
+      <h4>Comprar</h4>
+      <a href="pages/tienda.html?cat=hombre">Hombre</a>
+      <a href="pages/tienda.html?cat=mujer">Mujer</a>
+      <a href="pages/tienda.html?cat=nino">Niños</a>
+      <a href="pages/tienda.html?cat=mascotas">Mascotas</a>
+    </div>
+    <div>
+      <h4>La casa</h4>
+      <a href="#lquienes">Quiénes somos</a>
+      <a href="#lbeneficios">Cómo trabajamos</a>
+      <a href="pages/tienda.html">Devoluciones</a>
+      <a href="pages/tienda.html">Contáctanos</a>
+    </div>
+    <div>
+      <h4>Cuenta</h4>
+      <a href="pages/login.html">Iniciar sesión</a>
+      <a href="pages/registro.html">Crear cuenta</a>
+      <a href="pages/tienda.html">Mis pedidos</a>
+      <a href="pages/tienda.html">Términos y condiciones</a>
+    </div>
+    <div>
+      <h4>Pago</h4>
+      <div class="pays"><span>VISA</span><span>MC</span><span>AMEX</span><span>OXXO</span><span>PayPal</span></div>
+    </div>
+  </div>
+  <div class="footer__bar">© 2026 Lumière Perfumería</div>
+</footer>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/validacion.js"></script>
+<script src="assets/js/landing.js"></script>
+</body>
+</html>

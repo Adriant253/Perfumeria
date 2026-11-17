@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panel de administración · Lumière Perfumería</title>
+<link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+<!-- Cabecera del panel: solo se pinta cuando guardia.js confirma el rol admin -->
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="tienda.html">
+      <img class="logo__img logo__img--vino" src="../assets/img/logo.jpg" alt="Lumière Perfumería" width="634" height="640" />
+      <img class="logo__img logo__img--claro" src="../assets/img/logo_blanco.png" alt="" aria-hidden="true" width="419" height="420" />
+    </a>
+
+    <div class="header__actions">
+      <a class="haction" href="tienda.html" title="Volver a la tienda">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M12 3 3 10h2v10h6v-6h2v6h6V10h2L12 3z"/></svg>
+        <span>Volver a<br><b>la tienda</b></span>
+      </a>
+      <button class="haction" id="adminSalir" type="button" title="Cerrar sesión">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M17 7l-1.4 1.4L18.2 11H8v2h10.2l-2.6 2.6L17 17l5-5-5-5zM4 5h8V3H4a2 2 0 00-2 2v14a2 2 0 002 2h8v-2H4V5z"/></svg>
+        <span>Cerrar<br><b>sesión</b></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="admin">
+    <div class="admin__cab">
+      <div>
+        <h1 class="admin__titulo">Panel de administración</h1>
+        <p class="admin__nota">Hola <b id="adminNombre">…</b>. Desde aquí cambias el tipo de usuario (cliente o admin), activas cuentas y cierras sesiones abiertas.</p>
+      </div>
+      <button class="btn btn--ghost" id="adminRecargar" type="button" style="width:auto;padding:10px 20px">Actualizar</button>
+    </div>
+
+    <!-- Aviso para quien entra sin permiso: guardia.js lo muestra un instante -->
+    <p class="laviso" id="adminAviso" hidden></p>
+
+    <div class="admin__cifras" id="adminCifras"></div>
+
+    <div id="adminUsuarios">
+      <p class="laviso">Cargando usuarios…</p>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/guardia.js"></script>
+<script src="../assets/js/admin.js"></script>
+</body>
+</html>

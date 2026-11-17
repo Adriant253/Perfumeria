@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumière Perfumería · Tienda en línea</title>
+<link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <button class="header__menu" id="menuBtn" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="logo" href="#" data-category="todos">
+      <img class="logo__img logo__img--vino" src="../assets/img/logo.jpg" alt="Lumière Perfumería" width="634" height="640" />
+      <img class="logo__img logo__img--claro" src="../assets/img/logo_blanco.png" alt="" aria-hidden="true" width="419" height="420" />
+    </a>
+
+    <form class="search" id="searchForm" role="search">
+      <input type="search" id="searchInput" placeholder="¿Qué perfume buscas hoy?" aria-label="Buscar perfumes" maxlength="60" autocomplete="off" />
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M10 2a8 8 0 105.3 14l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+      </button>
+    </form>
+
+    <div class="header__actions">
+      <button class="haction" id="loginBtn">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5z"/></svg>
+        <span>Hola<br><b>Inicia sesión</b></span>
+      </button>
+      <button class="haction" id="cartBtn">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M7 4h-2l-1 2H2v2h2l3 8h10l3-8H7.2L7 4zm1.2 4h10.3l-2.2 6H10L8.2 8zM9 18a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z"/></svg>
+        <span>Mi<br><b>Carrito</b></span>
+        <em class="badge" id="cartCount">0</em>
+      </button>
+    </div>
+
+    <!-- Avisos y accesos rápidos: los mismos botones que la cuenta y el carrito -->
+    <div class="header__enlaces">
+      <span class="header__aviso" id="envioGratisTopbar">Envío gratis en compras mayores a $599</span>
+      <button class="haction" id="rastreoLink" type="button" aria-label="Rastrea tu pedido" title="Rastrea tu pedido">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2 3 6.5v11L12 22l9-4.5v-11L12 2zm0 2.2 6.6 3.3L12 10.8 5.4 7.5 12 4.2z"/></svg>
+        <span>Rastrea<br><b>tu pedido</b></span>
+      </button>
+      <button class="haction" id="logoutTop" type="button" hidden aria-label="Cerrar sesión" title="Cerrar sesión">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M17 7l-1.4 1.4L18.2 11H8v2h10.2l-2.6 2.6L17 17l5-5-5-5zM4 5h8V3H4a2 2 0 00-2 2v14a2 2 0 002 2h8v-2H4V5z"/></svg>
+        <span>Cerrar<br><b>sesión</b></span>
+      </button>
+      <!-- Solo aparece con una cuenta de tipo admin (ver pintarCuenta en app.js) -->
+      <a class="haction" id="adminPanelLink" href="admin.html" hidden aria-label="Panel de administración" title="Panel de administración">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
+        <span>Panel<br><b>admin</b></span>
+      </a>
+    </div>
+  </div>
+
+  <nav class="catnav" id="catnav">
+    <div class="container catnav__inner">
+      <button class="catnav__item is-active" data-category="todos">Todos</button>
+      <button class="catnav__item" data-category="hombre">Hombre</button>
+      <button class="catnav__item" data-category="mujer">Mujer</button>
+      <button class="catnav__item" data-category="nino">Niño</button>
+      <button class="catnav__item" data-category="nina">Niña</button>
+      <button class="catnav__item" data-category="mascotas">Mascotas</button>
+      <span class="catnav__spacer"></span>
+      <button class="catnav__item catnav__item--alt" data-category="ofertas">Ofertas</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__inner">
+      <button class="hero__nav hero__nav--prev" id="heroPrev" aria-label="Anterior">‹</button>
+      <div class="hero__track" id="heroTrack"></div>
+      <button class="hero__nav hero__nav--next" id="heroNext" aria-label="Siguiente">›</button>
+      <div class="hero__dots" id="heroDots"></div>
+    </div>
+  </section>
+
+  <section class="container benefits">
+    <div class="benefit"><b>Pagos a meses</b><span>Sin intereses con tarjetas participantes</span></div>
+    <div class="benefit"><b>Envío gratis</b><span id="envioGratisBenefit">En compras mayores a $599</span></div>
+    <div class="benefit"><b>100% originales</b><span>Garantía de autenticidad</span></div>
+    <div class="benefit"><b>Devolución fácil</b><span>30 días para cambios</span></div>
+  </section>
+
+  <section class="container circles">
+    <h2 class="section-title">Compra por categoría</h2>
+    <div class="circles__list" id="circlesList"></div>
+  </section>
+
+  <section class="container catalog">
+    <aside class="filters">
+      <h3>Filtros</h3>
+      <div class="filters__group">
+        <h4>Precio</h4>
+        <label><input type="radio" name="price" value="all" checked> Todos</label>
+        <label><input type="radio" name="price" value="0-499"> Menos de $500</label>
+        <label><input type="radio" name="price" value="500-999"> $500 - $999</label>
+        <label><input type="radio" name="price" value="1000-1999"> $1,000 - $1,999</label>
+        <label><input type="radio" name="price" value="2000-999999"> $2,000 o más</label>
+      </div>
+      <div class="filters__group">
+        <h4>Marca</h4>
+        <div id="brandFilters"></div>
+      </div>
+      <button class="btn btn--ghost" id="clearFilters">Limpiar filtros</button>
+    </aside>
+
+    <div class="catalog__main">
+      <div class="catalog__head">
+        <h2 class="section-title" id="catalogTitle">Todos los perfumes</h2>
+        <div class="catalog__tools">
+          <span id="resultCount"></span>
+          <select id="sortSelect" aria-label="Ordenar">
+            <option value="relevancia">Ordenar por: Relevancia</option>
+            <option value="menor">Precio: menor a mayor</option>
+            <option value="mayor">Precio: mayor a menor</option>
+            <option value="rating">Mejor calificados</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No encontramos productos con esos filtros.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <h4>Comprar en Lumière</h4>
+      <a href="#">Perfumes para hombre</a>
+      <a href="#">Perfumes para mujer</a>
+      <a href="#">Perfumes infantiles</a>
+      <a href="#">Perfumes para mascotas</a>
+    </div>
+    <div>
+      <h4>Atención a clientes</h4>
+      <a href="#">Centro de ayuda</a>
+      <a href="#">Devoluciones</a>
+      <a href="#">Garantías</a>
+      <a href="#">Contáctanos</a>
+    </div>
+    <div>
+      <h4>Nosotros</h4>
+      <a href="#">Quiénes somos</a>
+      <a href="#">Trabaja con nosotros</a>
+      <a href="#">Aviso de privacidad</a>
+      <a href="#">Términos y condiciones</a>
+    </div>
+    <div>
+      <h4>Formas de pago</h4>
+      <div class="pays"><span>VISA</span><span>MC</span><span>AMEX</span><span>OXXO</span><span>PayPal</span></div>
+    </div>
+  </div>
+  <div class="footer__bar">© 2026 Lumière Perfumería · Todos los derechos reservados</div>
+</footer>
+
+<!-- Carrito -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="cart" id="cart" aria-label="Carrito de compras">
+  <header class="cart__head">
+    <h3>Mi carrito</h3>
+    <button id="cartClose" aria-label="Cerrar">×</button>
+  </header>
+  <div class="cart__body" id="cartBody"></div>
+  <footer class="cart__foot">
+    <div class="cart__linea"><span>Subtotal</span><b id="cartSubtotal">$0.00</b></div>
+    <div class="cart__linea"><span>Envío</span><b id="cartEnvio">—</b></div>
+    <div class="cart__total"><span>Total</span><b id="cartTotal">$0.00</b></div>
+    <button class="btn btn--primary btn--block" id="checkoutBtn">Pagar</button>
+  </footer>
+</aside>
+
+<!-- Pago: datos de envío del pedido -->
+<div class="modal" id="checkoutModal" hidden>
+  <div class="modal__box modal__box--form">
+    <button class="modal__close" id="checkoutClose" aria-label="Cerrar">×</button>
+    <h2 class="lform__titulo">Datos de envío</h2>
+    <form class="lform" id="checkoutForm">
+      <!-- Direcciones y tarjetas guardadas: las pinta app.js al abrir el pago -->
+      <div class="lform__guardadas" id="checkoutGuardadas" hidden></div>
+
+      <div class="lform__grid">
+        <label>Destinatario<input type="text" name="destinatario" maxlength="100" autocomplete="name" required /></label>
+        <label>Teléfono<input type="tel" name="telefono" maxlength="20" autocomplete="tel" required /></label>
+        <label>Calle y número<input type="text" name="calle" maxlength="120" autocomplete="street-address" required /></label>
+        <label>Colonia<input type="text" name="colonia" maxlength="120" autocomplete="address-line2" required /></label>
+        <label>Ciudad<input type="text" name="ciudad" maxlength="60" autocomplete="address-level2" required /></label>
+        <label>Estado<input type="text" name="estado" maxlength="60" autocomplete="address-level1" required /></label>
+        <label>Código postal<input type="text" name="cp" inputmode="numeric" maxlength="5" autocomplete="postal-code" required /></label>
+        <label>Método de pago
+          <select name="metodo_pago">
+            <option>Tarjeta de crédito/débito</option>
+            <option>PayPal</option>
+            <option>OXXO</option>
+          </select>
+        </label>
+      </div>
+      <label>Referencias (opcional)<input type="text" name="referencias" maxlength="160" /></label>
+      <label class="lform__check"><input type="checkbox" name="guardar_direccion" checked /> Guardar esta dirección para mis próximos pedidos</label>
+      <div class="lform__resumen" id="checkoutResumen"></div>
+      <button class="btn btn--primary btn--block" type="submit" id="checkoutEnviar">Confirmar pedido</button>
+      <p class="lform__nota">Pago de demostración: el pedido y el pago se registran en la base de datos.</p>
+    </form>
+  </div>
+</div>
+
+<!-- Mis pedidos -->
+<div class="modal" id="pedidosModal" hidden>
+  <div class="modal__box modal__box--form">
+    <button class="modal__close" id="pedidosClose" aria-label="Cerrar">×</button>
+    <h2 class="lform__titulo">Mis pedidos</h2>
+    <div id="pedidosBody"></div>
+    <button class="btn btn--ghost" id="logoutBtn">Cerrar sesión</button>
+  </div>
+</div>
+
+<!-- Mi perfil: se abre al pulsar el nombre en la cabecera -->
+<div class="modal" id="perfilModal" hidden>
+  <div class="modal__box modal__box--form">
+    <button class="modal__close" id="perfilClose" aria-label="Cerrar">×</button>
+    <h2 class="lform__titulo">Mi perfil</h2>
+    <div id="perfilBody"></div>
+    <div class="lperfil__acciones">
+      <button class="btn btn--primary" id="perfilPedidos" type="button">Ver mis pedidos</button>
+      <button class="btn btn--ghost" id="perfilSalir" type="button">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Datos locales de respaldo: api.js los reemplaza con lo que devuelve MySQL -->
+<script src="../assets/js/data.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/validacion.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nueva contraseña · Lumière Perfumería</title>
+<link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body class="landing">
+
+<header class="header">
+  <!-- Acceso: solo la marca a la izquierda y el aviso de envío a la derecha -->
+  <div class="container lhead lhead--portada">
+    <a class="logo" href="../index.html">
+      <img class="logo__img logo__img--vino" src="../assets/img/logo.jpg" alt="Lumière Perfumería" width="634" height="640" />
+      <img class="logo__img logo__img--claro" src="../assets/img/logo_blanco.png" alt="" aria-hidden="true" width="419" height="420" />
+    </a>
+
+    <div class="header__enlaces">
+      <span class="header__aviso" id="envioGratisTopbar">Envío gratis en compras mayores a $599</span>
+    </div>
+  </div>
+</header>
+
+<main class="auth">
+  <div class="auth__caja">
+    <h1 class="auth__titulo">Nueva contraseña</h1>
+    <p class="auth__sub" id="recuperarSub">Crea la contraseña con la que entrarás a tu cuenta.</p>
+
+    <p class="auth__aviso" id="authAviso" hidden></p>
+
+    <form class="auth__form" id="nuevaForm" hidden>
+      <label class="campo">
+        <span>Contraseña nueva</span>
+        <input type="password" name="password" autocomplete="new-password" placeholder="Mínimo 8 caracteres" minlength="8" maxlength="72" required />
+      </label>
+      <label class="campo">
+        <span>Repite la contraseña</span>
+        <input type="password" name="repetir" autocomplete="new-password" placeholder="Otra vez, para confirmar" minlength="8" maxlength="72" required />
+      </label>
+      <button class="boton boton--vino boton--bloque" type="submit" id="nuevaGuardar">Guardar contraseña</button>
+    </form>
+
+    <a class="boton boton--pastel boton--bloque auth__alterno" id="irLogin" href="login.html">Iniciar sesión</a>
+
+    <p class="auth__nota" id="recuperarNota">El enlace caduca a los 30 minutos y solo sirve una vez.</p>
+    <a class="auth__volver" id="authVolver" href="../index.html">← Volver</a>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__bar">© 2026 Lumière Perfumería</div>
+</footer>
+
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/validacion.js"></script>
+<script src="../assets/js/recuperar.js"></script>
+</body>
+</html>

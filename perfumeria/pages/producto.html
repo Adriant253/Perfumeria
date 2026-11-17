@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Perfume · Lumière Perfumería</title>
+<link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+<link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="tienda.html">
+      <img class="logo__img logo__img--vino" src="../assets/img/logo.jpg" alt="Lumière Perfumería" width="634" height="640" />
+      <img class="logo__img logo__img--claro" src="../assets/img/logo_blanco.png" alt="" aria-hidden="true" width="419" height="420" />
+    </a>
+    <nav class="lhead__nav ficha__nav">
+      <a href="tienda.html?cat=mujer">Mujer</a>
+      <a href="tienda.html?cat=hombre">Hombre</a>
+      <a href="tienda.html?cat=nino">Niños</a>
+      <a href="tienda.html?cat=mascotas">Mascotas</a>
+    </nav>
+    <div class="header__actions" id="zonaSesion"></div>
+
+    <!-- Avisos y accesos rápidos: los mismos botones que la cuenta y el carrito -->
+    <div class="header__enlaces">
+      <span class="header__aviso" id="envioGratisTopbar">Envío gratis en compras mayores a $599</span>
+      <a class="haction" href="tienda.html?continuar=pedidos" aria-label="Rastrea tu pedido" title="Rastrea tu pedido">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2 3 6.5v11L12 22l9-4.5v-11L12 2zm0 2.2 6.6 3.3L12 10.8 5.4 7.5 12 4.2z"/></svg>
+        <span>Rastrea<br><b>tu pedido</b></span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container ficha" id="ficha">
+  <p class="ficha__cargando">Cargando la ficha del perfume…</p>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <h4>Comprar</h4>
+      <a href="tienda.html?cat=hombre">Hombre</a>
+      <a href="tienda.html?cat=mujer">Mujer</a>
+      <a href="tienda.html?cat=nino">Niños</a>
+      <a href="tienda.html?cat=mascotas">Mascotas</a>
+    </div>
+    <div>
+      <h4>La casa</h4>
+      <a href="../index.html#lquienes">Quiénes somos</a>
+      <a href="../index.html#lbeneficios">Cómo trabajamos</a>
+      <a href="tienda.html">Devoluciones</a>
+      <a href="tienda.html">Contáctanos</a>
+    </div>
+    <div>
+      <h4>Cuenta</h4>
+      <a href="login.html">Iniciar sesión</a>
+      <a href="registro.html">Crear cuenta</a>
+      <a href="tienda.html">Mis pedidos</a>
+      <a href="tienda.html">Términos y condiciones</a>
+    </div>
+    <div>
+      <h4>Pago</h4>
+      <div class="pays"><span>VISA</span><span>MC</span><span>AMEX</span><span>OXXO</span><span>PayPal</span></div>
+    </div>
+  </div>
+  <div class="footer__bar">© 2026 Lumière Perfumería</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/validacion.js"></script>
+<script src="../assets/js/producto.js"></script>
+</body>
+</html>
